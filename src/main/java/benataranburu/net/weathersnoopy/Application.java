@@ -31,7 +31,8 @@ public class Application {
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
 			WeatherData weatherData = restTemplate.getForObject(
-					"http://api.openweathermap.org/data/2.5/weather?q=London&APPID=5b9c22bf6509ec725d2a5fa622ad5492" 
+					"http://api.openweathermap.org/data/2.5/weather?" +
+					"q=London&APPID=5b9c22bf6509ec725d2a5fa622ad5492" 
 					, WeatherData.class);
 			log.info(weatherData.toString());
 		};
